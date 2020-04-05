@@ -89,3 +89,55 @@ function rpsGame(choice){
     message = finalMessage(result); 
     rpsFrontEnd(humanChoice, botChoice, message);
 }
+ /// Challenge 4: Change THe Colors of all the Buttons
+ var allButtons = document.getElementsByTagName('button');
+ var copyAllButtons = [];
+
+ for (let i=0; i < allButtons.length; i++){
+     copyAllButtons.push(allButtons[i].classList[1]);
+ }
+
+
+ function buttonColorChange(buttonThingy){
+    if (buttonThingy.value === 'red'){
+        buttonRed();
+    }
+    else if (buttonThingy.value ==='green'){
+        buttonGreen();
+    }
+    else if (buttonThingy.value === 'reset'){
+        buttonColorReset();
+    }
+    else if (buttonThingy.value === 'random'){
+        randomColor();
+    }
+ }
+
+ function buttonRed(){
+    for (let i =0; i < allButtons.length; i++){
+        allButtons[i].classList.remove(allButtons[i].classList[1]);
+        allButtons[i].classList.add('btn-danger');
+    }
+ }
+ function buttonGreen(){
+    for (let i =0; i < allButtons.length; i++){
+        allButtons[i].classList.remove(allButtons[i].classList[1]);
+        allButtons[i].classList.add('btn-success');
+    }
+ }
+
+ function buttonColorReset(){
+     for( let i=0;i < allButtons.length ;i++){
+         allButtons[i].classList.remove(allButtons[i].classList[1]);
+         allButtons[i].classList.add(copyAllButtons[i]);
+     }
+ }
+
+ function randomColor(){
+    let choices = ['btn-primary', 'btn-danger', 'btn-warning', 'btn-success',];
+    for(let i=0; i< allButtons.length; i++){
+        let randomNumber = Math.floor(Math.random() * 4); 
+        allButtons[i].classList.remove(allButtons[i].classList[1]);
+        allButtons[i].classList.add(choices[randomNumber]);
+    }
+ }

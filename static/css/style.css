@@ -1,4 +1,4 @@
-.container-1, .container-2, .container-3 {
+.container-1, .container-2, .container-3, .container-4{
     margin: 0 auto;
     border: 1px solid black;
     width: 75%;
@@ -6,7 +6,7 @@
 }
 
 
-.flex-box-container-1, .flex-box-container-2, .flex-box-rps{
+.flex-box-container-1, .flex-box-container-2, .flex-box-rps, .flex-box-pick-color{
 border: 1px solid black;
 display: flex;
 padding: 10px;
